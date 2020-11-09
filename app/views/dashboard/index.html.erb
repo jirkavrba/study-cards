@@ -1,1 +1,11 @@
-<%= @collections %>
+<% unless @recent.empty? %>
+  <h1>Recent collections:</h1>
+  <%= @recent.each do |collection| %>
+      helo
+  <% end %>
+<% end %>
+
+<% if @collections.empty? %>
+  There are no collections yet.
+<% else %>
+<% end %>
