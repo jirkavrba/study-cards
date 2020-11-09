@@ -1,11 +1,30 @@
 <% unless @recent.empty? %>
-  <h1>Recent collections:</h1>
-  <%= @recent.each do |collection| %>
-      helo
-  <% end %>
+  <h3 class="white-text">Recent collections</h3>
+  <div class="row">
+    <% @recent.each do |collection| %>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <div class="indigo darken-4" style="height: 100px;"></div>
+            <span class="card-title valign-wrapper">
+              <i class="material-icons indigo-text text-lighten-1"><%= collection.is_private ? 'lock' : 'public' %></i>
+              <span style="margin-left: 1rem"><%= collection.title %></span>
+            </span>
+            <a class="btn-large btn-floating halfway-fab waves-effect waves-light green" href="<%= collection_path(collection) %>">
+              <i class="material-icons">arrow_forward</i>
+            </a>
+          </div>
+          <div class="card-content">
+            <p class="indigo-text">Contains <b><%= collection.cards.count %></b> cards</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>
 
 <% if @collections.empty? %>
-  There are no collections yet.
+  <h4 class="white-text">There are no collections yet.</h4>
+  <%= link_to "Create a new collection", new_collection_path, class: 'btn white indigo-text' %>
 <% else %>
 <% end %>
