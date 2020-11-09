@@ -14,3 +14,14 @@
  *= require_self
  */
 
+body {
+  background: #303f9f;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.app-container {
+  flex-grow: 1;
+  padding-top: 4rem;
+}
